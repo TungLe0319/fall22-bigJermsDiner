@@ -10,13 +10,16 @@ function _drawOrders() {
 }
 
 export class OrdersController {
-  constructor () {
+  constructor() {
     appState.on('orders', _drawOrders)
     appState.on('items', _drawOrders)
+    _drawOrders()
   }
   createOrder() {
     try {
+      // @ts-ignore
       window.event.preventDefault()
+      // @ts-ignore
       const form = window.event.target
       let formData = getFormData(form)
       // console.log('Does this object look okay?', formData);

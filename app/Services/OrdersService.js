@@ -1,5 +1,6 @@
 import { appState } from "../AppState.js"
 import { Order } from "../Models/Order.js"
+import { saveState } from "../Utils/Store.js"
 
 class OrdersService {
   toggleShellfishAllergy(id) {
@@ -19,11 +20,13 @@ class OrdersService {
     // NOTE trigger event listener to redraw
     // appState.orders = appState.orders
     appState.emit('orders')
+    saveState('orders', appState.orders)
   }
   createOrder(formData) {
     let order = new Order(formData)
     appState.orders = [order, ...appState.orders]
     console.log(appState.orders);
+    saveState('orders', appState.orders)
   }
 
 }
