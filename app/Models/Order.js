@@ -41,7 +41,7 @@ export class Order {
               <label for="name" class="visually-hidden">Name</label>
             </div>
             <div>
-              <input class="form-control" type="number" required min="0" name="price" placeholder="0.00"/>
+              <input class="form-control" type="number" required  name="price" placeholder="0.00"/>
               <label for="price" class="visually-hidden">Price</label>
             </div>
             <button type="submit" class="btn btn-primary" title="Add Item">+</button>
